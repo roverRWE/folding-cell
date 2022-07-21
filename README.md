@@ -93,7 +93,7 @@ Ok, we've finished configuring the cell.
 
 5) Adding code to your UITableViewController
 
-5.1) Add constants:
+  1. Add constants:
 ``` swift
 fileprivate struct C {
   struct CellHeight {
@@ -102,20 +102,20 @@ fileprivate struct C {
   }
 }
 ```
-5.2) Add property for calculate cells height
+  2. Add property for calculate cells height
 
 ``` swift
      var cellHeights = (0..<CELLCOUNT).map { _ in C.CellHeight.close }
 ```
 
-5.3) Override method:
+  3. Override method:
 ``` swift
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return cellHeights[indexPath.row]
     }
 ```
 
-5.4) Added code to method:
+  4. Added code to method:
 ``` swift
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         guard case let cell as FoldingCell = tableView.cellForRowAtIndexPath(indexPath) else {
@@ -139,7 +139,7 @@ fileprivate struct C {
         }, completion: nil)
     }
 ```
-5.5) Control if the cell is open or closed
+  5. Control if the cell is open or closed
 ``` swift
   override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
 
